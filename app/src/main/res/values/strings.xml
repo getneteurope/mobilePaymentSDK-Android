@@ -1,0 +1,38 @@
+<!--
+  ~ Copyright © 2022 PagoNxt Merchant Solutions S.L. and Santander España Merchant Services, Entidad de Pago, S.L.U. All rights reserved.
+  -->
+
+<resources>
+    <string name="app_name">Ecom Examples</string>
+
+    <string name="sdkpay_ecom_zapp_scheme">sdkpayecomexample</string>
+    <string name="sdkpay_ecom_zapp_host">open.pbba</string>
+
+    <string name="sdkpay_ecom_card_host">sdkpayecomexample</string>
+    <string name="sdkpay_ecom_card_scheme">open.card</string>
+
+    <string name="sdkpay_ecom_paypal_scheme">sdkpayecomexample</string>
+    <string name="sdkpay_ecom_paypal_host">result.paypal</string>
+
+    <string name="sdkpay_ecom_klarna_return_url_host" translatable="false">ecom-example</string>
+    <string name="sdkpay_ecom_klarna_return_url_scheme" translatable="false">kp-ecom-example</string>
+
+    <string name="title_activity_card_form">CardFieldActivity</string>
+    <string name="title_activity_animated_card_form">AnimatedCardFieldActivity</string>
+    <string name="form_submit">Submit</string>
+    <string name="start_simple_card_payment">Simple card payment</string>
+    <string name="start_animated_card_payment">Animated card payment</string>
+    <string name="start_simple_card_token_payment">Simple card token payment</string>
+    <string name="start_card_field_payment">Card field payment</string>
+    <string name="start_animated_card_field_payment">Animated Card field payment</string>
+    <string name="start_token_animated_card_field_payment">Token Animated Card field payment</string>
+    <string name="start_fragment_card_field_payment">Fragment Card field payment</string>
+    <string name="start_sepa_payment">Sepa payment</string>
+    <string name="start_paypal_payment">Paypal payment</string>
+    <string name="start_alipay_payment">Alipay payment</string>
+    <string name="start_wiretransfer_payment">Wiretransfer payment</string>
+    <string name="start_p24_payment">P24 payment</string>
+    <string name="start_optional_parameters_example">Optional parameters example</string>
+    <string name="start_loyalty_card">Loyalty card</string>
+    <string name="start_kotlin_demo">Kotlin Demo</string>
+</resources>

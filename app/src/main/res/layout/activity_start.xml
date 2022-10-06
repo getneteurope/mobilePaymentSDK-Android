@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2022 PagoNxt Merchant Solutions S.L. and Santander España Merchant Services, Entidad de Pago, S.L.U. All rights reserved.
+  -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sdkpay.ecom.examples.StartActivity"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <Button
+        android:id="@+id/button_simple_card_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:onClick="makeSimpleCardPayment"
+        android:text="@string/start_simple_card_payment" />
+
+    <Button
+        android:id="@+id/button_animated_card_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="makeAnimatedCardPayment"
+        android:text="@string/start_animated_card_payment" />
+
+    <Button
+        android:id="@+id/button_simple_token_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="makeSimpleCardTokenPayment"
+        android:text="@string/start_simple_card_token_payment" />
+
+    <Button
+        android:id="@+id/button_card_field_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="makeCardFieldPayment"
+        android:text="@string/start_card_field_payment" />
+
+    <Button
+        android:id="@+id/button_animated_card_field_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="makeAnimatedCardFieldPayment"
+        android:text="@string/start_animated_card_field_payment" />
+
+    <Button
+        android:id="@+id/button_token_animated_card_field_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="makeTokenAnimatedCardFieldPayment"
+        android:text="@string/start_token_animated_card_field_payment" />
+
+    <Button
+        android:id="@+id/button_fragment_card_field_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="makeFragmentCardFieldPayment"
+        android:text="@string/start_fragment_card_field_payment" />
+
+    <Button
+        android:id="@+id/button_sepa_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="makeSepaPayment"
+        android:text="@string/start_sepa_payment" />
+
+    <Button
+        android:id="@+id/button_paypal_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="makePaypalPayment"
+        android:text="@string/start_paypal_payment" />
+
+    <Button
+        android:id="@+id/button_alipay_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="makeAlipayPayment"
+        android:text="@string/start_alipay_payment" />
+
+    <Button
+        android:id="@+id/button_wiretransfer_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="makeWiretransferPayment"
+        android:text="@string/start_wiretransfer_payment" />
+
+    <Button
+        android:id="@+id/button_p24_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="makeP24Payment"
+        android:text="@string/start_p24_payment" />
+
+    <Button
+        android:id="@+id/button_optional_parameters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="makeCardPaymentWithOptionalParameters"
+        android:text="@string/start_optional_parameters_example" />
+
+<!--    <Button-->
+<!--        android:id="@+id/button_loyalty_card"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:onClick="makeLoyaltyCard"-->
+<!--        android:text="@string/start_loyalty_card" />-->
+
+    <Button
+        android:id="@+id/button_kotlin_example"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="kotlinDemo"
+        android:text="@string/start_kotlin_demo" />
+
+</LinearLayout>
+</ScrollView>
