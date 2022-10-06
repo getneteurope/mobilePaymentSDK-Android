@@ -111,8 +111,8 @@ public class PaymentObjectProvider {
         cardPayment.setRequireManualCardBrandSelection(true);
 
         CardToken cardToken = new CardToken();
-        cardToken.setTokenId("5500971586101006");
-        cardToken.setMaskedAccountNumber("541333******1006");
+        cardToken.setTokenId("5524988500162004");
+        cardToken.setMaskedAccountNumber("541333******2004");
 
         cardPayment.setCardToken(cardToken);
 
@@ -183,8 +183,8 @@ public class PaymentObjectProvider {
     public AlipayPayment getAlipayPayment(){
         String timestamp = SignatureHelper.generateTimestamp();
         String requestId = UUID.randomUUID().toString();
-        String merchantId = "0e79dd5d-b570-4fc5-94cd-dd7cf08c0e21";
-        String secretKey =  "6587e997-5057-4ce0-a8ef-d7cf0ab6faca";
+        String merchantId = "<to_be_updated>";
+        String secretKey =  "<to_be_updated>";
         TransactionType transactionType = TransactionType.DEBIT;
         BigDecimal amount = new BigDecimal(5);
         String currency = "EUR";
