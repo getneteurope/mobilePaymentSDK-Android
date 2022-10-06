@@ -7,16 +7,13 @@
 buildscript {
     ext.kotlin_version = '1.5.20'
 
-
     repositories {
         google()
         jcenter()
-        maven { url 'https://www.testfairy.com/maven' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.2.2'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
-        classpath 'com.testfairy.plugins.gradle:testfairy:3.+'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
