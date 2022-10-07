@@ -1,1 +1,3 @@
-# mobilePaymentSDK-Android
+# Mobile Payment SDK Android
+
+For integration visit [docs](https://docs.getneteurope.com/)
