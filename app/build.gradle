@@ -4,11 +4,6 @@
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'testfairy'
-
-ext {
-    sdkpayEcomLibraryVersion = "4.4.1"
-}
 
 android {
     compileSdkVersion 32
@@ -51,13 +46,6 @@ android {
 }
 
 repositories {
-//ecom-android deploy to differenet repo
-//    maven {
-//        url  "https://dl.bintray.com/sdkpay/ecom-android"
-//    }
-    maven {
-        url 'https://x.klarnacdn.net/mobile-sdk/'
-    }
     mavenLocal()
 }
 
@@ -80,9 +68,4 @@ dependencies {
     implementation files('libs/sepa.aar')
     implementation files('libs/wiretransfer.aar')
 
-}
-
-testfairyConfig {
-    apiKey "e590ac6f76ff006c4745190ce073d90de10ded6f"
-    uploadProguardMapping true
 }
