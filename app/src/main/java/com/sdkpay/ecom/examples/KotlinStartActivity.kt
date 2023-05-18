@@ -93,6 +93,36 @@ class KotlinStartActivity : AppCompatActivity() {
             .startPayment(mPaymentObjectProvider.p24Payment)
     }
 
+    fun makeSofortPayment(view: View?) {
+            Client(mContext, URL_EE_TEST)
+                .startPayment(mPaymentObjectProvider.sofortPayment)
+    }
+
+    fun makeRatepayInvoicePayment(view: View?) {
+            Client(mContext, URL_EE_TEST)
+                .startPayment(mPaymentObjectProvider.ratepayInvoicePayment)
+    }
+
+    fun makeRatepayElvPayment(view: View?) {
+       Client(mContext, URL_EE_TEST)
+           .startPayment(mPaymentObjectProvider.ratepayElvPayment)
+    }
+
+    fun makeBlikRedirectPayment(view: View?) {
+        Client(mContext, URL_EE_TEST)
+            .startPayment(mPaymentObjectProvider.blikRedirectPayment)
+    }
+
+    fun makeBlikLevel0Payment(view: View?) {
+        Client(mContext, URL_EE_TEST)
+            .startPayment(mPaymentObjectProvider.blikLevel0Payment)
+    }
+
+    fun makeBizumPayment(view: View?) {
+        Client(mContext, URL_EE_TEST)
+            .startPayment(mPaymentObjectProvider.bizumPayment)
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 

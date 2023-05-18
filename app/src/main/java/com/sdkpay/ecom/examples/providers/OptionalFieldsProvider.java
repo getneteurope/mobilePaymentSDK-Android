@@ -4,6 +4,7 @@
 
 package com.sdkpay.ecom.examples.providers;
 
+import com.sdkpay.ecom.card.model.CardFieldPayment;
 import com.sdkpay.ecom.card.model.CardPayment;
 import com.sdkpay.ecom.model.AccountHolder;
 import com.sdkpay.ecom.model.AccountInfo;
@@ -35,7 +36,20 @@ public class OptionalFieldsProvider {
 
     public BasePayment appendThreeDSV2Fields(BasePayment payment){
 
+        if(payment instanceof CardPayment){
+            ((CardPayment)payment).setAttempt3d(true);
+            ((CardPayment)payment).setThreeDVersion("2.1.0");
+        }
+
+        if(payment instanceof CardFieldPayment){
+            ((CardFieldPayment)payment).setAttempt3d(true);
+            ((CardFieldPayment)payment).setThreeDVersion("2.1.0");
+        }
+
         AccountHolder accountHolder = new AccountHolder();
+        accountHolder.setFirstName("John");
+        accountHolder.setLastName("Doe");
+        accountHolder.setEmail("john.doe@email.com");
         AccountInfo accountInfo = new AccountInfo();
 
         accountInfo.setAuthenticationTimestamp(new Date(System.currentTimeMillis()));

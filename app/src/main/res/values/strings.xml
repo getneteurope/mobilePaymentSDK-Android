@@ -32,6 +32,12 @@
     <string name="start_alipay_payment">Alipay payment</string>
     <string name="start_wiretransfer_payment">Wiretransfer payment</string>
     <string name="start_p24_payment">P24 payment</string>
+    <string name="start_sofort_payment">Sofort payment</string>
+    <string name="start_ratepay_invoice_payment">Ratepay Invoice payment</string>
+    <string name="start_ratepay_elv_payment">Ratepay Elv payment</string>
+    <string name="start_blik_redirect_payment">BLIK Redirect payment</string>
+    <string name="start_blik_level0_payment">BLIK Level0 payment</string>
+    <string name="start_bizum_payment">Bizum payment</string>
     <string name="start_optional_parameters_example">Optional parameters example</string>
     <string name="start_loyalty_card">Loyalty card</string>
     <string name="start_kotlin_demo">Kotlin Demo</string>
