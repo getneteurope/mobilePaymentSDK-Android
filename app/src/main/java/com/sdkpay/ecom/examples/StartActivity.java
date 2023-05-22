@@ -1,5 +1,6 @@
 /*
- * Copyright © 2022 PagoNxt Merchant Solutions S.L. and Santander España Merchant Services, Entidad de Pago, S.L.U. All rights reserved.
+ * Copyright © 2023 PagoNxt Merchant Solutions S.L. and Santander España Merchant Services, Entidad de Pago, S.L.U.
+ * You may not use this file except in compliance with the License which is available at https://mit-license.org/
  */
 
 package com.sdkpay.ecom.examples;
@@ -7,9 +8,9 @@ package com.sdkpay.ecom.examples;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sdkpay.ecom.Client;
@@ -30,6 +31,10 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+        ((TextView)findViewById(R.id.version)).setText(
+                "App version: " + BuildConfig.VERSION_NAME + "_" + (BuildConfig.DEBUG ? "debug" : "release") + "\n" +
+                "SDK version: " + com.sdkpay.ecom.BuildConfig.VERSION_NAME + "_" + (com.sdkpay.ecom.BuildConfig.DEBUG ? "debug" : "release")
+        );
     }
 
     public void makeSepaPayment(View view) {
@@ -92,6 +97,36 @@ public class StartActivity extends AppCompatActivity {
     public void makeP24Payment(View view){
         new Client(mContext, URL_EE_TEST)
                 .startPayment(mPaymentObjectProvider.getP24Payment());
+    }
+
+    public void makeSofortPayment(View view){
+        new Client(mContext, URL_EE_TEST)
+                .startPayment(mPaymentObjectProvider.getSofortPayment());
+    }
+
+    public void makeRatepayInvoicePayment(View view){
+        new Client(mContext, URL_EE_TEST)
+                .startPayment(mPaymentObjectProvider.getRatepayInvoicePayment());
+    }
+
+    public void makeRatepayElvPayment(View view){
+        new Client(mContext, URL_EE_TEST)
+                .startPayment(mPaymentObjectProvider.getRatepayElvPayment());
+    }
+
+    public void makeBlikRedirectPayment(View view){
+        new Client(mContext, URL_EE_TEST)
+                .startPayment(mPaymentObjectProvider.getBlikRedirectPayment());
+    }
+
+    public void makeBlikLevel0Payment(View view){
+        new Client(mContext, URL_EE_TEST)
+                .startPayment(mPaymentObjectProvider.getBlikLevel0Payment());
+    }
+
+    public void makeBizumPayment(View view){
+        new Client(mContext, URL_EE_TEST)
+                .startPayment(mPaymentObjectProvider.getBizumPayment());
     }
 
     public void makeLoyaltyCard(View view){

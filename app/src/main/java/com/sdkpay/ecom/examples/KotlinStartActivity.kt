@@ -1,5 +1,6 @@
 /*
- * Copyright © 2022 PagoNxt Merchant Solutions S.L. and Santander España Merchant Services, Entidad de Pago, S.L.U. All rights reserved.
+ * Copyright © 2023 PagoNxt Merchant Solutions S.L. and Santander España Merchant Services, Entidad de Pago, S.L.U.
+ * You may not use this file except in compliance with the License which is available at https://mit-license.org/
  */
 
 package com.sdkpay.ecom.examples
@@ -91,6 +92,36 @@ class KotlinStartActivity : AppCompatActivity() {
     fun makeP24Payment(view: View?) {
         Client(mContext, URL_EE_TEST)
             .startPayment(mPaymentObjectProvider.p24Payment)
+    }
+
+    fun makeSofortPayment(view: View?) {
+            Client(mContext, URL_EE_TEST)
+                .startPayment(mPaymentObjectProvider.sofortPayment)
+    }
+
+    fun makeRatepayInvoicePayment(view: View?) {
+            Client(mContext, URL_EE_TEST)
+                .startPayment(mPaymentObjectProvider.ratepayInvoicePayment)
+    }
+
+    fun makeRatepayElvPayment(view: View?) {
+       Client(mContext, URL_EE_TEST)
+           .startPayment(mPaymentObjectProvider.ratepayElvPayment)
+    }
+
+    fun makeBlikRedirectPayment(view: View?) {
+        Client(mContext, URL_EE_TEST)
+            .startPayment(mPaymentObjectProvider.blikRedirectPayment)
+    }
+
+    fun makeBlikLevel0Payment(view: View?) {
+        Client(mContext, URL_EE_TEST)
+            .startPayment(mPaymentObjectProvider.blikLevel0Payment)
+    }
+
+    fun makeBizumPayment(view: View?) {
+        Client(mContext, URL_EE_TEST)
+            .startPayment(mPaymentObjectProvider.bizumPayment)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

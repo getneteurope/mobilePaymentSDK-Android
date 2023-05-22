@@ -1,28 +1,29 @@
 /*
- * Copyright © 2022 PagoNxt Merchant Solutions S.L. and Santander España Merchant Services, Entidad de Pago, S.L.U. All rights reserved.
+ * Copyright © 2023 PagoNxt Merchant Solutions S.L. and Santander España Merchant Services, Entidad de Pago, S.L.U.
+ * You may not use this file except in compliance with the License which is available at https://mit-license.org/
  */
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 32
-
+    compileSdkVersion 33
     defaultConfig {
-        multiDexEnabled true
         applicationId "com.sdkpay.ecom.examples"
         minSdkVersion 23
-        targetSdkVersion 32
-        versionCode 1
-        versionName "1.0"
+        targetSdkVersion 33
+        versionCode 2
+        versionName "1.1.0"
         flavorDimensions "default"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     compileOptions {
-        targetCompatibility JavaVersion.VERSION_1_8
-        sourceCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = "11"
     }
 
     buildTypes {
@@ -30,6 +31,11 @@ android {
             minifyEnabled true
             debuggable true
             proguardFiles getDefaultProguardFile('proguard-android.txt')
+        }
+    }
+    configurations {
+        all {
+            exclude group: 'androidx.lifecycle', module: 'lifecycle-viewmodel-ktx'
         }
     }
 
@@ -45,19 +51,15 @@ android {
     }
 }
 
-repositories {
-    mavenLocal()
-}
-
 apply from: 'libs/dependencies.gradle'
 
 dependencies {
 
     implementation 'androidx.annotation:annotation:1.0.0'
     implementation 'androidx.cardview:cardview:1.0.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    testImplementation "junit:junit:4.13.2"
+    androidTestImplementation "androidx.test.ext:junit:1.1.5"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1"
 
     implementation files('libs/alipay.aar')
     implementation files('libs/camera.aar')
@@ -67,5 +69,9 @@ dependencies {
     implementation files('libs/paypal.aar')
     implementation files('libs/sepa.aar')
     implementation files('libs/wiretransfer.aar')
+    implementation files('libs/sofort.aar')
+    implementation files('libs/ratepay.aar')
+    implementation files('libs/blik.aar')
+    implementation files('libs/bizum.aar')
 
 }

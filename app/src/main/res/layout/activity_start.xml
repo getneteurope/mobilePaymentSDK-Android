@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright © 2022 PagoNxt Merchant Solutions S.L. and Santander España Merchant Services, Entidad de Pago, S.L.U. All rights reserved.
+  ~ Copyright © 2023 PagoNxt Merchant Solutions S.L. and Santander España Merchant Services, Entidad de Pago, S.L.U.
+  ~ You may not use this file except in compliance with the License which is available at https://mit-license.org/
   -->
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -101,6 +102,48 @@
         android:text="@string/start_p24_payment" />
 
     <Button
+        android:id="@+id/button_sofort_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="makeSofortPayment"
+        android:text="@string/start_sofort_payment" />
+
+    <Button
+        android:id="@+id/button_ratepay_invoice_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="makeRatepayInvoicePayment"
+        android:text="@string/start_ratepay_invoice_payment" />
+
+    <Button
+        android:id="@+id/button_ratepay_elv_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="makeRatepayElvPayment"
+        android:text="@string/start_ratepay_elv_payment" />
+
+    <Button
+        android:id="@+id/button_blik_redirect_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="makeBlikRedirectPayment"
+        android:text="@string/start_blik_redirect_payment" />
+
+    <Button
+        android:id="@+id/button_blik_level0_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="makeBlikLevel0Payment"
+        android:text="@string/start_blik_level0_payment" />
+
+    <Button
+        android:id="@+id/button_bizum_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="makeBizumPayment"
+        android:text="@string/start_bizum_payment" />
+
+    <Button
         android:id="@+id/button_optional_parameters"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -122,5 +165,13 @@
         android:onClick="kotlinDemo"
         android:text="@string/start_kotlin_demo" />
 
+    <TextView
+        android:id="@+id/version"
+        android:padding="10.dp"
+        android:gravity="center"
+        tools:text="App version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
 </LinearLayout>
 </ScrollView>
