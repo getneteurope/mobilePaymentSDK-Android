@@ -83,7 +83,8 @@ class KotlinTokenAnimatedCardFieldActivity : AppCompatActivity(), Observer<Payme
         cardFieldPayment.accountHolder = accountHolder
 
         val cardToken = CardToken()
-        cardToken.tokenId = "4304509873471003"
+        cardToken.tokenId = "5427317855871006"
+        cardToken.maskedAccountNumber = "541333******1006"
         cardFieldPayment.cardToken = cardToken
 
         return cardFieldPayment
