@@ -92,7 +92,8 @@ public class TokenAnimatedCardFieldActivity extends AppCompatActivity implements
         cardFieldPayment.setAccountHolder(accountHolder);
 
         CardToken cardToken = new CardToken();
-        cardToken.setTokenId("5500971586101006");
+        cardToken.setTokenId("5427317855871006");
+        cardToken.setMaskedAccountNumber("541333******1006");
         cardFieldPayment.setCardToken(cardToken);
 
         return cardFieldPayment;

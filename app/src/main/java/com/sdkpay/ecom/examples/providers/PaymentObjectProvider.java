@@ -121,7 +121,7 @@ public class PaymentObjectProvider {
         cardPayment.setRequireManualCardBrandSelection(true);
 
         CardToken cardToken = new CardToken();
-        cardToken.setTokenId("5500971586101006");
+        cardToken.setTokenId("5427317855871006");
         cardToken.setMaskedAccountNumber("541333******1006");
 
         cardPayment.setCardToken(cardToken);

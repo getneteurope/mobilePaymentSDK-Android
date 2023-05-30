@@ -14,10 +14,8 @@ import android.widget.Toast;
 
 import com.sdkpay.ecom.Client;
 import com.sdkpay.ecom.card.AnimatedCardFieldFragment;
-import com.sdkpay.ecom.card.model.CardBundle;
-import com.sdkpay.ecom.card.model.CardFieldPayment;
-import com.sdkpay.ecom.model.AccountHolder;
-import com.sdkpay.ecom.model.TransactionType;
+import com.sdkpay.ecom.examples.providers.OptionalFieldsProvider;
+import com.sdkpay.ecom.examples.providers.PaymentObjectProvider;
 import com.sdkpay.ecom.model.PaymentResponse;
 import com.sdkpay.ecom.util.Observer;
 
@@ -30,7 +28,7 @@ import static com.sdkpay.ecom.examples.Constants.URL_EE_TEST;
 public class AnimatedCardFieldActivity extends AppCompatActivity implements Observer<PaymentResponse> {
     private final Context mContext = this;
     AnimatedCardFieldFragment animatedCardFieldFragment;
-
+    PaymentObjectProvider mPaymentObjectProvider = new PaymentObjectProvider(new OptionalFieldsProvider());
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,37 +55,11 @@ public class AnimatedCardFieldActivity extends AppCompatActivity implements Obse
 
     public void onSubmitButtonClicked(View view) {
         if(animatedCardFieldFragment.getCardBundle() != null) {
-            new Client(this, URL_EE_TEST, REQUEST_TIMEOUT).startPayment(getCardFormPayment(animatedCardFieldFragment.getCardBundle()));
+            new Client(this, URL_EE_TEST, REQUEST_TIMEOUT).startPayment(mPaymentObjectProvider.getCardFormPayment(animatedCardFieldFragment.getCardBundle()));
             findViewById(R.id.progress).setVisibility(View.VISIBLE);
         }else {
             Toast.makeText(mContext, "Card bundle is null!", Toast.LENGTH_SHORT).show();
         }
-    }
-
-    public CardFieldPayment getCardFormPayment(CardBundle cardBundle) {
-        String timestamp = SignatureHelper.generateTimestamp();
-        String merchantID = "5c4a8a42-04a8-4970-a595-262f0ba0a108";
-        String secretKey = "5ac555d4-e7f7-409f-8147-d82c8c10ed53";
-        String requestID = UUID.randomUUID().toString();
-        TransactionType transactionType = TransactionType.PURCHASE;
-        BigDecimal amount = new BigDecimal(5);
-        String currency = "EUR";
-        String signature = SignatureHelper.generateSignature(timestamp, merchantID, requestID, transactionType.getValue(), amount, currency, secretKey);
-
-        CardFieldPayment cardFieldPayment = new CardFieldPayment.Builder()
-                .setSignature(signature)
-                .setMerchantAccountId(merchantID)
-                .setRequestId(requestID)
-                .setAmount(amount)
-                .setTransactionType(transactionType)
-                .setCurrency(currency)
-                .setCardBundle(cardBundle)
-                .build();
-
-        AccountHolder accountHolder = new AccountHolder("John", "Doe");
-        cardFieldPayment.setAccountHolder(accountHolder);
-
-        return cardFieldPayment;
     }
 
     @Override
