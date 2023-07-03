@@ -1,0 +1,82 @@
+/*
+ * Copyright © 2022 PagoNxt Merchant Solutions S.L. and Santander España Merchant Services, Entidad de Pago, S.L.U. All rights reserved.
+ */
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'testfairy'
+
+android {
+    compileSdkVersion compileVersion
+    defaultConfig {
+        applicationId "com.sdkpay.ecom.examples"
+        minSdkVersion minVersion
+        targetSdkVersion targetVersion
+        versionCode exampleAppVersionCode
+        versionName exampleAppVersion
+        flavorDimensions "default"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android.txt')
+        }
+    }
+    configurations {
+        all {
+            exclude group: 'androidx.lifecycle', module: 'lifecycle-viewmodel-ktx'
+        }
+    }
+
+    productFlavors {
+        normal {
+        }
+        themedLight {
+            applicationId "com.sdkpay.ecom.examples.themedLight"
+        }
+        themedDark {
+            applicationId "com.sdkpay.ecom.examples.themedDark"
+        }
+    }
+}
+
+apply from: 'libs/dependencies.gradle'
+
+dependencies {
+
+    implementation 'androidx.annotation:annotation:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    testImplementation "junit:junit:$junit"
+    androidTestImplementation "androidx.test.ext:junit:$testExt"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoCore"
+
+    implementation files('libs/alipay.aar')
+    implementation files('libs/camera.aar')
+    implementation files('libs/card.aar')
+    implementation files('libs/core.aar')
+    implementation files('libs/p24.aar')
+    implementation files('libs/paypal.aar')
+    implementation files('libs/sepa.aar')
+    implementation files('libs/wiretransfer.aar')
+    implementation files('libs/sofort.aar')
+    implementation files('libs/ratepay.aar')
+    implementation files('libs/blik.aar')
+    implementation files('libs/bizum.aar')
+
+}
+
+testfairyConfig {
+    apiKey "e590ac6f76ff006c4745190ce073d90de10ded6f"
+    uploadProguardMapping true
+}

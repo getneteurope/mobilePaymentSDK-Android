@@ -1,18 +1,19 @@
 /*
- * Copyright © 2023 PagoNxt Merchant Solutions S.L. and Santander España Merchant Services, Entidad de Pago, S.L.U.
- * You may not use this file except in compliance with the License which is available at https://mit-license.org/
+ * Copyright © 2022 PagoNxt Merchant Solutions S.L. and Santander España Merchant Services, Entidad de Pago, S.L.U. All rights reserved.
  */
 
 buildscript {
-    ext.kotlin_version = '1.8.20'
+    apply from: '../dependencies.gradle'
 
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://www.testfairy.com/maven' }
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:7.4.0"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.testfairy.plugins.gradle:testfairy:$testfairy"
+        classpath "com.android.tools.build:gradle:$gradlePlugin"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinGradlePlugin"
     }
 }
 
