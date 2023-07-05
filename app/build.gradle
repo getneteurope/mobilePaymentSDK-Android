@@ -1,21 +1,24 @@
 /*
- * Copyright © 2023 PagoNxt Merchant Solutions S.L. and Santander España Merchant Services, Entidad de Pago, S.L.U.
- * You may not use this file except in compliance with the License which is available at https://mit-license.org/
+ * Copyright © 2022 PagoNxt Merchant Solutions S.L. and Santander España Merchant Services, Entidad de Pago, S.L.U. All rights reserved.
  */
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'testfairy'
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion compileVersion
     defaultConfig {
         applicationId "com.sdkpay.ecom.examples"
-        minSdkVersion 23
-        targetSdkVersion 33
-        versionCode 2
-        versionName "1.1.1"
+        minSdkVersion minVersion
+        targetSdkVersion targetVersion
+        versionCode exampleAppVersionCode
+        versionName exampleAppVersion
         flavorDimensions "default"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    lintOptions {
+        abortOnError false
     }
 
     compileOptions {
@@ -38,6 +41,12 @@ android {
             exclude group: 'androidx.lifecycle', module: 'lifecycle-viewmodel-ktx'
         }
     }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion androidxComposeCompiler
+    }
 
     productFlavors {
         normal {
@@ -51,15 +60,28 @@ android {
     }
 }
 
+apply from: 'libs/versions.gradle'
 apply from: 'libs/dependencies.gradle'
 
 dependencies {
 
     implementation 'androidx.annotation:annotation:1.0.0'
     implementation 'androidx.cardview:cardview:1.0.0'
-    testImplementation "junit:junit:4.13.2"
-    androidTestImplementation "androidx.test.ext:junit:1.1.5"
-    androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1"
+    testImplementation "junit:junit:$junit"
+    androidTestImplementation "androidx.test.ext:junit:$testExt"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoCore"
+
+    implementation "androidx.compose.ui:ui:$androidxCompose"
+    implementation "androidx.compose.ui:ui-tooling:$androidxCompose"
+    implementation "androidx.compose.ui:ui-tooling-preview:$androidxCompose"
+    implementation "androidx.compose.foundation:foundation:$androidxCompose"
+    implementation "androidx.compose.material:material:$androidxCompose"
+    implementation "androidx.compose.material:material-icons-core:$androidxCompose"
+    implementation "androidx.compose.material:material-icons-extended:$androidxCompose"
+    implementation "androidx.activity:activity-compose:$androidxActivityCompose"
+
+    debugImplementation "androidx.compose.ui:ui-tooling:$androidxCompose"
+    debugImplementation "androidx.compose.ui:ui-test-manifest:$androidxCompose"
 
     implementation files('libs/alipay.aar')
     implementation files('libs/camera.aar')
@@ -74,4 +96,9 @@ dependencies {
     implementation files('libs/blik.aar')
     implementation files('libs/bizum.aar')
 
+}
+
+testfairyConfig {
+    apiKey "e590ac6f76ff006c4745190ce073d90de10ded6f"
+    uploadProguardMapping true
 }

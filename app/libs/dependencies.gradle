@@ -1,20 +1,8 @@
 /*
- * Copyright © 2023 PagoNxt Merchant Solutions S.L. and Santander España Merchant Services, Entidad de Pago, S.L.U.
- * You may not use this file except in compliance with the License which is available at https://mit-license.org/
+ * Copyright © 2022 PagoNxt Merchant Solutions S.L. and Santander España Merchant Services, Entidad de Pago, S.L.U. All rights reserved.
  */
 
 dependencies {
-    def kotlinVersion = "1.8.20"
-    def appCompat = "1.6.1"
-    def material = "1.8.0"
-    def actvityKtx = "1.7.1"
-    def fragmentKtx = "1.5.7"
-    def rxKotlin = "2.2.0"
-    def rxAndroid = "2.1.0"
-    def constraint = "2.1.4"
-    def coreKtx = "1.10.0"
-    def lifecycleRuntimeKtx = "2.2.0"
-    def camerax = "1.0.2"
 
     implementation "androidx.appcompat:appcompat:$appCompat"
     implementation "com.google.android.material:material:$material"
