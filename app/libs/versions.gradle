@@ -1,0 +1,73 @@
+ext {
+    def prop = new Properties()
+    try {
+        prop.load(new FileInputStream(file('../project.properties')))
+    } catch (Exception e) {
+    }
+    releaseVersion = prop.getProperty("version")
+    releaseCode = releaseVersion.replaceAll("[^\\d]", "").toInteger()
+    sdkVersion = releaseVersion
+    gradlePlugin = '7.4.0'
+    kotlinGradlePlugin = '1.8.20'
+    testfairy = '3.+'
+    kotlinVersion = '1.8.20'
+    rxKotlin = '2.2.0'
+    rxAndroid = '2.1.0'
+    uiautomator = "2.2.0"
+    testRules = "1.2.0"
+    junit = '4.13.2'
+    testExt = "1.1.5"
+    testAnnotation = "1.1.0"
+    assertj = "3.15.0"
+    mockito = "2.18.3"
+    mockitoKotlin = "1.6.0"
+    espressoJunit = '1.1.5'
+    espressoCore = '3.5.1'
+    androidxCompose = "1.4.3"
+    androidxComposeCompiler = "1.4.6"
+    androidxActivityCompose = "1.5.1"
+    appCompat = "1.6.1"
+    material = "1.8.0"
+    constraint = "2.1.4"
+    coreKtx = "1.10.0"
+    actvityKtx = "1.7.1"
+    fragmentKtx = "1.5.7"
+    lifecycleRuntimeKtx = "2.2.0"
+    viewModelLifecycle = "2.6.1"
+    timber = "4.7.1"
+    camerax = '1.0.2'
+    recyclerview = "1.3.0"
+    cardview = "1.0.0"
+    butterknife = "10.2.1"
+    navigationCompose = "2.5.2"
+    eventbus = "3.0.0"
+    calligraphy = "2.3.0"
+    retrofit = "2.9.0"
+    loggingInterceptor = "4.4.0"
+    mockwebserver = "4.4.0"
+    iban4j = "3.2.1"
+    rxjava2 = "2.2.9"
+    voyager = "1.0.0-rc02"
+    sonar = "3.5.0.2730"
+
+    // Global versions
+    minVersion = 23
+    targetVersion = 33
+    compileVersion = 33
+    minifyEnabledDebug = true
+    minifyEnabledRelease = true
+    enabledDebuggable = true
+
+    // Test app
+    testAppVersion = "2.6.10"
+    testAppVersionCode = 2691
+
+    //Example app
+    exampleAppVersion = "2.5.5"
+    exampleAppVersionCode = 6
+
+    //Shop app
+    shopAppVersion = "1.9.5"
+    shopAppVersionCode = 185
+
+}
