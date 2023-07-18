@@ -102,8 +102,3 @@ dependencies {
     implementation files('libs/zinia.aar')
 
 }
-
-testfairyConfig {
-    apiKey "e590ac6f76ff006c4745190ce073d90de10ded6f"
-    uploadProguardMapping true
-}
