@@ -1,3 +1,3 @@
-# Mobile Payment SDK Android
+# Mobile Payment SDK Android test
 
-For integration visit [docs](https://docs.getneteurope.com/MobilePaymentSDK.html)
+For integration visit [docs](https://docs.getneteurope.com/)

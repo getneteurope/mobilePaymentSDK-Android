@@ -1,6 +1,6 @@
 <!--
-  ~ Copyright © 2023 PagoNxt Merchant Solutions S.L. and Santander España Merchant Services, Entidad de Pago, S.L.U.
-  ~ You may not use this file except in compliance with the License which is available at https://mit-license.org/
+~ Copyright © 2023 PagoNxt Merchant Solutions S.L. and Santander España Merchant Services, Entidad de Pago, S.L.U.
+~ You may not use this file except in compliance with the License which is available at https://mit-license.org/
   -->
 
 <resources>
@@ -39,6 +39,10 @@
     <string name="start_blik_redirect_payment">BLIK Redirect payment</string>
     <string name="start_blik_level0_payment">BLIK Level0 payment</string>
     <string name="start_bizum_payment">Bizum payment</string>
+    <string name="start_mbway_payment">MB Way payment</string>
+    <string name="start_ideal_payment">Ideal payment</string>
+    <string name="start_mbreferencia_payment">MB Referencia payment</string>
+    <string name="start_zinia_payment">Zinia payment</string>
     <string name="start_optional_parameters_example">Optional parameters example</string>
     <string name="start_loyalty_card">Loyalty card</string>
     <string name="start_kotlin_demo">Kotlin Demo</string>
